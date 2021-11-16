@@ -2212,8 +2212,9 @@ bcdedit /deletevalue useplatformclock
 bcdedit /deletevalue tscsyncpolicy 
 bcdedit /deletevalue disabledynamictick
 
-@echo Network Tweaks
-netsh int tcp set heuristics enabled
+@echo Network Card reset
+netsh winsock reset
+
 
 @echo Power CFG
 powercfg /setactive scheme_min >nul
@@ -3380,8 +3381,8 @@ bcdedit /deletevalue useplatformclock
 bcdedit /deletevalue tscsyncpolicy 
 bcdedit /deletevalue disabledynamictick
 
-@echo Применение сетевых твиков...
-netsh int tcp set heuristics enabled
+@echo Сброс настроек сетевого стека...
+netsh winsock reset
 
 @echo Настройка электропитания...
 powercfg /setactive scheme_min >nul
